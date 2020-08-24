@@ -1,5 +1,6 @@
-body{
+*{
     margin: 0;
+    padding: 0;
     
 }
 
@@ -17,3 +18,12 @@ body{
 .blog {
     text-align: center;
 }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+ }

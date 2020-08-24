@@ -2,10 +2,9 @@ import React from "react"
 
 function Footer() {
     return(
-      <div>
-        
-        <h3>Footer</h3>
-        <h3>Country: India</h3>
+      
+      <div class="footer">
+        <h5> This is a Footer</h5>
       </div>
     )
   }

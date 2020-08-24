@@ -12,11 +12,11 @@ function Blog(props) {
     <Card.Body>
       <Card.Title>{props.heading}</Card.Title>
       <Card.Text>
-      {props.category}
+      Category: {props.category}
       </Card.Text>
     </Card.Body>
     <Card.Footer>
-      <small className="text-muted">{props.date}</small>
+      <small className="text-muted">Published on: {props.date}</small>
     </Card.Footer>
   </Card>
 </CardGroup>
