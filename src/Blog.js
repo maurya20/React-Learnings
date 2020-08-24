@@ -1,26 +1,23 @@
 import React from "react"
-
-import Card from 'react-bootstrap/Card'
 import { CardGroup } from 'react-bootstrap';
 
 function Blog(props) {
     return(
-
-<CardGroup>
-  <Card>
-    <Card.Img variant="top" src={props.pic} />
-    <Card.Body>
-      <Card.Title>{props.heading}</Card.Title>
-      <Card.Text>
-      Category: {props.category}
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Published on: {props.date}</small>
-    </Card.Footer>
-  </Card>
-</CardGroup>
-
+   <div class="container">  
+    <div className="row">
+      <div className="col-md-4">
+        <div className="thumbnail">
+          <img src={props.pic} alt="Lights" style={{width: "100%"}}></img>
+            <div className="caption">
+              <h3>{props.heading}</h3>
+              <h3>Category: {props.category}</h3>
+              <p>Published on: {props.date}</p>
+            </div>
+            </div>
+      </div>
+    </div>
+    </div>
+  
     )
   }
 
