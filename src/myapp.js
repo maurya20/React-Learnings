@@ -1,18 +1,21 @@
 import React from "react"
-import Header from "./components/Header"
-import Info from "./components/Info"
-import Footer from "./components/Footer"
+
+import Blog from "./Blog"
+import blogData from "./blogData"
 
 
 
 function MyApp() {
-    return(
+  const blogComponents = blogData.map(blog=> <Blog category={blog.category
+  } heading={blog.heading} date={blog.date} pic={blog.pic} />)
+   
+   
+   
+    return (
       <div>
-        <Header />
-        <Info 
-        myinfo={{name:"Mukesh Maurya", email:"mukesh.ice17@gmail.com", country:"INDIA"}}
-        />
-        <Footer />
+        
+        {blogComponents}
+       
       </div>
       
     )
