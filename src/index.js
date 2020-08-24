@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import MyApp from "./components/MyApp"
+import MyApp from "./MyApp"
+import "./MyApp.css" 
 
 
 

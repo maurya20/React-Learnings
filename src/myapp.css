@@ -1,9 +1,15 @@
 body{
     margin: 0;
-    padding: 0;
+    
 }
 
 
 .navbar {
     background-color: #3339;
+    margin-top: 0;
+}
+
+.info {
+    background-color: blueviolet;
+    margin: 0;
 }
