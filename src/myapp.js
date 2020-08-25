@@ -4,16 +4,21 @@ class App1 extends React.Component {
   constructor() {
     super()
     this.state = {
-      name : "Mukesh"
+      isLogedIn : false
     }
   }
   render() {
-    const date = new Date()
-    const hour = date.getDate()
+    let wd
+    if (this.state.isLogedIn===true){
+      wd = "In"
+    }
+    else {
+      wd = "out"
+    }
     return (
       <div className="footer">
-        <h1>Hello, My Name is {this.state.name}</h1>
-        <h1>Follow us on  {hour}</h1>
+        <h1>Hello, there I am loged {wd} now.</h1>
+        <h1>Follow us on</h1>
         <ul>
           <li>Instagram</li>
           <li>WhatsApp</li>
