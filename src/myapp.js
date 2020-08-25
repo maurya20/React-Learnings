@@ -1,24 +1,20 @@
 import React from "react"
 
-import Blog from "./Blog"
-import blogData from "./blogData"
-
-
-
-function MyApp() {
-  const blogComponents = blogData.map(blog=> <Blog category={blog.category
-  } heading={blog.heading} date={blog.date} pic={blog.pic} />)
-   
-   
-   
+class App1 extends React.Component {
+  render() {
+    const date = new Date()
+    const hour = date.getDate()
     return (
-      <div>
-        
-        {blogComponents}
-       
+      <div className="footer">
+        <h1>Follow us on  {hour}</h1>
+        <ul>
+          <li>Instagram</li>
+          <li>WhatsApp</li>
+          <li>Oculus</li>
+        </ul>
       </div>
-      
-    )
+    );
   }
+}
 
-  export default MyApp
+export default App1
