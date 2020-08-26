@@ -1,52 +1,38 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Footer from './Footer'
+
 
 class ToDoApp extends Component {
-  state = {
-    todos: []
+  constructor() {
+    super()
+    this.state = {
+      isLogedIn : false
+    }
+    this.handleClick = this.handleClick.bind(this)
   }
-  componentDidMount() {
-    fetch('http://jsonplaceholder.typicode.com/todos')
-    .then(res => res.json())
-    .then((data) => {
-      this.setState({ todos: data })
-      console.log(this.state.todos)
-    })
-    .catch(console.log)
-  }
-  // [...]
+   handleClick() {
+     this.setState(prevState=> {
+       return {
+         isLogedIn: !prevState.isLogedIn
+       }
+
+       
+     })
+   }
+
+
 
   render() {
-
+    let buttonText = this.state.isLogedIn ? "Log Out" : "Log In"
+    let dispText = this.state.isLogedIn ? "You are Logged In" : "You are Loged out"
     return (
       <div>
         <Header />
-       <div className="container">
-        <div className="col-xs-12">
-        <h1>My Todos</h1>
-        {this.state.todos.map((todo) => (
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">{todo.title}</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-              { todo.completed &&
-                <span>
-                Completed
-                </span>
-              }
-              { !todo.completed &&
-                <span>
-                  Pending
-                </span>
-              }              
-              </h6>
-            </div>
-          </div>
-        ))}
-        </div>
-       </div>
-       <Footer />
+       
+
+      <button type="button" className="btn btn-info" onClick={this.handleClick}>{buttonText}</button>
+      <h3>{dispText}</h3>
+       
        </div>
     );
   }
