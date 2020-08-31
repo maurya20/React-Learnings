@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ToDoApp from "./components/ToDoApp"
-import "./MyApp.css"
+
+import MyApp from "./MyApp"
 
 
 
-ReactDOM.render(< ToDoApp />, document.getElementById("root"))
+ReactDOM.render(< MyApp />, document.getElementById("root"))

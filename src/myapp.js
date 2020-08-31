@@ -1,33 +1,21 @@
 import React from "react"
+import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom"
 
 class App1 extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      count: 0
-    }
-      this.counter= this.counter.bind(this)
-    
-  }
-  counter() {
-    this.setState(prevState=> {
-      return {
-        count: prevState.count + 1
-      }
-    })
-  }
+
   render() {
     
     return (
-      <div className="footer">
-        <h1>{this.state.count}</h1>
-        <button onClick= {this.counter} style={{color:'red'}}>Count</button>
-        <h1>Follow us on</h1>
-        <ul>
-          <li>Instagram</li>
-          <li>WhatsApp</li>
-          <li>Oculus</li>
-        </ul>
+      <div>
+        <Router>
+          <Switch>
+            <Link to='/Blog'>Blog</Link>
+          </Switch>
+          <Switch>
+            <Link to='/ToDoApp'>ToDoApp</Link>
+          </Switch>
+        </Router>
+        
       </div>
     );
   }
