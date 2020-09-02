@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 
 
 class Wapp extends Component {
-    shoot = () => {
-        alert("Hey You, This is library!")
+    state = {
+        imgUrl:"https://picsum.photos/200"
     }
     render() {
         return (
             <div>
-              <button  onClick={this.shoot}>Take the shot!</button>  
+               <img src={this.state.imgUrl} alt="Random error!"/>
             </div>
         )
     }
