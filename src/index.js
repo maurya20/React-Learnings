@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import MyApp from "./MyApp"
+import Wapp from "./components/Wapp"
 
 
 
-ReactDOM.render(< MyApp />, document.getElementById("root"))
+ReactDOM.render(< Wapp />, document.getElementById("root"))
