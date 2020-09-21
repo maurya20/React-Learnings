@@ -1,8 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-import Wapp from "./components/Wapp"
-
+import Main from "./components/main"
 
 
-ReactDOM.render(< Wapp />, document.getElementById("root"))
+
+const App = ()=>{
+    return(
+        <div>
+         <Main/>  
+        </div>
+    )
+}
+
+
+
+ReactDOM.render(< App />, document.getElementById("root"))
