@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -32,11 +33,11 @@ class Main extends React.Component {
     };
 
     return (
-      <div className="container" style={{ backgroundColor: styling(), color:sty(),transition: '1s' }}>
-        <button type="checkbox" checked data-toggle="toggle" onClick={this.handleClick}>
-          {this.state.bgc ? "Dark Mode ON" : "Dark Mode OFF"}
-        </button>
-       
+      <div style={{ backgroundColor: styling(), color:sty(),transition: '1s',padding:"20px",textAlign: 'justify'}}>
+        <div class="custom-control custom-switch">
+        <input type="checkbox" className="custom-control-input" id="switch1" name="example" onClick={this.handleClick}/>
+      <label className="custom-control-label " for="switch1">Dark Mode</label>
+    </div>
         <h2> 10 Wildly-Successful Blogs That Earn Outlandish Incomes.</h2>
         <p>
           {" "}
