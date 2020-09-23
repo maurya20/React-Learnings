@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import JSON from './data.json'
-import NeswFeed from './NeswFeed'
+import NewsFeed from './NewsFeed'
 
 export class Main extends Component {
   state={
@@ -10,7 +10,9 @@ export class Main extends Component {
     console.log(JSON)
     return (
       <div>
-        <NeswFeed news={this.state.news} />
+        <NewsFeed news={this.state.news}>
+        <h1>Your feeds are here !!!</h1>
+        </NewsFeed>
       </div>
     )
   }
