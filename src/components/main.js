@@ -1,23 +1,20 @@
 import React, { Component } from 'react'
+import JSON from './data.json'
+import NeswFeed from './NeswFeed'
 
-export default class main extends Component {
+export class Main extends Component {
   state={
-    name:" ",
-    surname: " "
-  }
-  inputChangeHandler = (event)=>{
-    this.setState({
-      name:event.target.value
-    })
+    news:JSON
   }
   render() {
-    console.log(this.state.name)
+    console.log(JSON)
     return (
       <div>
-        <h2>Testing Input Change!!!</h2>
-    <h2>{this.state.name}</h2>
-        <input type="text" onChange={this.inputChangeHandler}/>
+        <NeswFeed news={this.state.news} />
       </div>
     )
   }
 }
+
+export default Main
+
