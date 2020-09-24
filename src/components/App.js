@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
+import $ from 'jquery'
 
 class App extends Component {
   state = {
@@ -10,10 +11,20 @@ class App extends Component {
       .then((json) => this.setState({ data: json }));
   }
   render() {
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myDIV *").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
     return (
-      <div>
+      <div><input id="myInput" type="text" placeholder="Search.."/>
+      
         {this.state.data.map((item) => (
-          <div>
+         <div id="myDIV">
           <h3>{item.name}</h3>
         <p>{item.address.city},Pin- {item.address.zipcode}, Location:{item.address.geo.lng}</p>
         </div>
