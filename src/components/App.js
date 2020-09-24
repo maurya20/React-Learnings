@@ -14,26 +14,36 @@ class App extends Component {
     this.setState({ search: e.target.value })
   }
   render() {
-    const { search } = this.state
+    const  {search} = this.state
     const filteredUsers = this.state.data.filter((item) => {
       return item.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
     })
 
     return (
       <div>
-        <input type="text" placeholder="Search.." onChange={this.onchange} />
+        <div style={{height:110,backgroundColor:"#bf00ff"}}>
+          <h1>React Filter!!</h1>
+        <input style={{float:"right"}} type="text" placeholder="Search.." onChange={this.onchange} />
+        </div>
+      <div style={{backgroundColor:'black', color:'green'}}>
+          <div className="row">
+          {filteredUsers.map((user) => (
+          <div className="col-md-4">
+           
+            <div className="card-body">
+        <h5 className="card-title">{user.name}</h5>
+          <p className="card-text">Email: {user.email}<p>city: {user.address.city}</p><p>Address: {user.address.street}, {user.address.suite}</p></p>
 
-        {filteredUsers.map((user) => (
-          <div>
-            <h3>{user.name}</h3>
-            <p>
-              {user.address.city},Pin- {user.address.zipcode}, Location:
-              {user.address.geo.lng}
-            </p>
+            </div>
+            <div className="card-footer">
+          <small className="text-muted">Location: {user.address.geo.lat}, {user.address.geo.lng}</small>
+            </div>
           </div>
         ))}
+        </div>
+      </div>
       </div>
     )
   }
 }
-export default App;
+export default App
