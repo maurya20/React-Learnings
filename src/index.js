@@ -1,17 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Main from "./components/main"
+import App from "./components/App"
 
 
 
-const App = ()=>{
+const Main = ()=>{
     return(
         <div>
-         <Main/>  
+         <App/>  
         </div>
     )
 }
 
 
 
-ReactDOM.render(< App />, document.getElementById("root"))
+ReactDOM.render(< Main />, document.getElementById("root"))
