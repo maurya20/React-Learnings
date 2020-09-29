@@ -1,49 +1,34 @@
-import React, { Component } from "react";
+import { event } from 'jquery'
+import React, { Component } from 'react'
 
-class App extends Component {
-  state = {
-    data: [],
-    search: "",
-  };
-  componentWillMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((json) => this.setState({ data: json }));
-  }
-  onchange = (e) => {
-    this.setState({ search: e.target.value })
+export class App extends Component {
+
+  handleSubmit=(event)=>{
+    event.preventDefault()
+    const values= {
+      username: this.username.value,
+      password: this.password.value
+    }
+    console.log(values)
   }
   render() {
-    const  {search} = this.state
-    const filteredUsers = this.state.data.filter((item) => {
-      return item.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
-    })
-
     return (
       <div>
-        <div style={{height:110,backgroundColor:"#bf00ff"}}>
-          <h1>React Filter!!</h1>
-        <input style={{float:"right"}} type="text" placeholder="Search.." onChange={this.onchange} />
-        </div>
-      <div style={{backgroundColor:'black', color:'green'}}>
-          <div className="row">
-          {filteredUsers.map((user) => (
-          <div className="col-md-4">
-           
-            <div className="card-body">
-        <h5 className="card-title">{user.name}</h5>
-          <p className="card-text">Email: {user.email}<p>city: {user.address.city}</p><p>Address: {user.address.street}, {user.address.suite}</p></p>
-
-            </div>
-            <div className="card-footer">
-          <small className="text-muted">Location: {user.address.geo.lat}, {user.address.geo.lng}</small>
-            </div>
+        <form>
+          <div>
+          <label>username:</label>
+          <input type="text" ref={input=>this.username = input}/>
           </div>
-        ))}
-        </div>
-      </div>
+          <div>
+          <label>Password:</label>
+          <input type="password" htmlFor="password" ref={input=>this.password = input}/>
+          </div>
+          <button type="submit" onClick={this.handleSubmit}>Signin</button>
+        </form>
+        
       </div>
     )
   }
 }
+
 export default App
