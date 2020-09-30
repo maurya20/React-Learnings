@@ -1,20 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './components/App'
-// import App from "./components/App"
-//import Home from "./components/Home"
+import React from 'react';
+import ReactDOM from 'react-dom';
+// import './css/index.css';
+import App from './components/App';
 
 
+ReactDOM.render(<App/>, document.getElementById('root'));
 
-const Main = ()=>{
-    return(
-        <div>
-            <App/>
-          
-        </div>
-    )
-}
-
-
-
-ReactDOM.render(< Main />, document.getElementById("root"))
