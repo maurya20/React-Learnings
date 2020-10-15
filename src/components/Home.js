@@ -1,26 +1,20 @@
 import React from 'react'
 import {buyCake} from "../redux/index"
 import {connect} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 
 function Home(props) {
+    const numofCake = useSelector(state => state.numberOfCakes)
+    const dispatch = useDispatch()
     return (
         <div>
-           <h2 style={{color:'red'}}>Number of Cakes={props.numberOfCakes}</h2> 
-           <button onClick={props.buyCake}>Buy Cake</button> 
+           <h2 style={{color:'red'}}>Number of Cakes={numofCake}</h2> 
+           <button onClick={()=>dispatch(buyCake())}>Buy Cake</button> 
         </div>
     )
 }
-const mapStateToProps = state=>{
-    return{
-        numberOfCakes:state.numberOfCakes
-    }
-}
-const mapDispatchToProps = dispatch=>{
-    return{
-      buyCake:()=> dispatch(buyCake())
-    }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(Home)
+
+export default Home
 
 
 
