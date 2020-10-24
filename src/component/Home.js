@@ -15,9 +15,9 @@ const Home = () => {
     <div>
       <h1>Hello from Home Component!!!!</h1>
       <h3>Counter: {counter.count}</h3>
-      <button className="btn btn-primary btn-lg btn-block" onClick={() => dispatch(increment(5))}>+</button>
-      <button className="btn btn-primary btn-lg btn-block"  onClick={() => dispatch(decrement())}>-</button>
-      <button  className="btn btn-primary btn-lg btn-block" onClick={() => dispatch(logAction())}>Log-Action</button>
+      <button className="btn btn-primary btn-lg " onClick={() => dispatch(increment(5))}>+</button>
+      <button className="btn btn-primary btn-lg "  onClick={() => dispatch(decrement())}>-</button>
+      <button  className="btn btn-primary btn-lg " onClick={() => dispatch(logAction())}>Log-Action</button>
 
       <hr></hr>
       <Hooks/>
