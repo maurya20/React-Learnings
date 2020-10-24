@@ -1,6 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement, logAction } from "../actions";
+import Hooks from './Hooks'
+
+
+
+
 const Home = () => {
   const counter = useSelector((state) => state.counter);
  
@@ -14,7 +19,8 @@ const Home = () => {
       <button className="btn btn-primary btn-lg btn-block"  onClick={() => dispatch(decrement())}>-</button>
       <button  className="btn btn-primary btn-lg btn-block" onClick={() => dispatch(logAction())}>Log-Action</button>
 
-      
+      <hr></hr>
+      <Hooks/>
     </div>
   );
 };
