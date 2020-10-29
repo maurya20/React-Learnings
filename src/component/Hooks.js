@@ -13,7 +13,7 @@ function CountApp() {
   })
   console.log(todos[0])
   return (  
-    <div> 
+    <React.Fragment>  
       <h3>What to do?{todos[1].tick}</h3>
       <p>You clicked {count} times</p>  
       <button onClick={() => setCount(count + 1)}>  
@@ -23,7 +23,7 @@ function CountApp() {
   <input type="text" placeholder="Type your name here..." onChange={(e) =>setName(e.target.value)}/>
   <br></br>
   <br></br>
-    </div>  
+    </React.Fragment>    
   );  
 }  
 export default CountApp;  

@@ -13,7 +13,7 @@ const myStore = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && 
 ReactDOM.render(
     <Provider store={myStore}>
        <App/>
-       <Home/>
+       {/* <Home/> */}
     </Provider>
     
 
