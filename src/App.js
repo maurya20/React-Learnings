@@ -1,30 +1,41 @@
-import React from "react"
-import { useSelector } from "react-redux";
-import { Editor } from 'react-draft-wysiwyg';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-// import MyEditor from './component/Editor'
+import React,{useState} from 'react'
 
 
+const App = ()=> {
+  const [fields, setFields] = useState([{ value:"hi" }])
 
-const App = ()=>{
-    const isLogged = useSelector((state) => state.isLogged);
-    return (
-            <div className="container">
+  const handleAdd = (e)=> {
+    const values = [...fields];
+    values.push({ value: 1 });
+    setFields(values);
+  }
 
-                <h3> Welcome to my editor </h3>
-                {/* <h1>Hello Redux!!!!!!</h1>
-                {isLogged ? <h3>LogIn</h3> : <h3>LogOut</h3>} */}
-              
-    
-              <Editor
-//editorState={editorState}
-  toolbarClassName="toolbarClassName"
-  wrapperClassName="wrapperClassName"
-  editorClassName="editorClassName"
-//onEditorStateChange={this.onEditorStateChange}
-/>
-{/* <MyEditor/> */}
-            </div>)
+  const handleRemove = (i)=> {
+    const values = [...fields];
+    values.splice(i);
+    setFields(values);
+  }
+
+  return (
+    <div className="container">
+      <h1>Enter Qualifications</h1>
+      {fields.map(( item, i) => {
+        return (
+          <div key={i}>
+            <input
+              type="text"
+              placeholder="Enter......"
+            />
+            <button className="btn btn-danger" type="button" onClick={() => handleRemove(i)} style={{marginLeft:30}}>
+              X
+            </button>
+          </div>
+        );
+      })}
+      <button className="btn btn-success"  type="button" onClick={() => handleAdd()}>
+        +
+      </button>  
+    </div>
+  );
 }
-
 export default App
