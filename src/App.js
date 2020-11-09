@@ -21,19 +21,19 @@ const App = ()=> {
       <h1>Enter Qualifications</h1>
       {fields.map(( item, i) => {
         return (
-          <div key={i}>
+          <div key={i} style={{padding:5}}>
             <input
               type="text"
               placeholder="Enter......"
             />
             <button className="btn btn-danger" type="button" onClick={() => handleRemove(i)} style={{marginLeft:30}}>
-              X
+            <span>❌</span>
             </button>
           </div>
         );
       })}
       <button className="btn btn-success"  type="button" onClick={() => handleAdd()}>
-        +
+      <span>➕</span>
       </button>  
     </div>
   );
