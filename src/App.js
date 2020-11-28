@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import video from './assets/videos/CMDvideo.mp4'
 
 const App = ()=> {
   const [fields, setFields] = useState([{ value:"hi" }])
@@ -34,7 +34,11 @@ const App = ()=> {
       })}
       <button className="btn btn-success"  type="button" onClick={() => handleAdd()}>
       <span>➕</span>
-      </button>  
+      </button> 
+
+       <p>hello</p>
+      <video src={video} width="450" height="300" controls>
+     </video> 
     </div>
   );
 }
