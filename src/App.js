@@ -18,12 +18,7 @@ const App = ()=> {
 
   return (
     <div className="container">
-      <details open>
-  <summary> <strong>Parmesan Deviled Eggs</strong></summary>
-  <p>
-    These delectable little bites are made with organic eggs, fresh Parmesan, and chopped pine nuts.
-  </p>
-</details>
+  
       <h1>Enter Qualifications</h1>
       {fields.map(( item, i) => {
         return (
@@ -45,6 +40,19 @@ const App = ()=> {
        <p>hello</p>
       <video src={video} width="450" height="300" controls>
      </video> 
+  <table>
+  <colgroup span="2" style={{backgroundColor:"yellow"}}/>
+  <tr>
+    <th>Col 1</th>
+    <th>Col 2</th>
+    <th>Col 3</th>
+  </tr>
+  <tr>
+    <td>first</td>
+    <td>second</td>
+    <td>third</td>
+  </tr>
+</table>
     </div>
   );
 }
