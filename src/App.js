@@ -18,6 +18,12 @@ const App = ()=> {
 
   return (
     <div className="container">
+      <details open>
+  <summary> <strong>Parmesan Deviled Eggs</strong></summary>
+  <p>
+    These delectable little bites are made with organic eggs, fresh Parmesan, and chopped pine nuts.
+  </p>
+</details>
       <h1>Enter Qualifications</h1>
       {fields.map(( item, i) => {
         return (
