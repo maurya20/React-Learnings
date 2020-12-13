@@ -1,33 +1,15 @@
-import React, { Component } from 'react';
-import { EditorState } from 'draft-js';
-import { Editor } from 'react-draft-wysiwyg';
+import React from 'react'
 
+const Editor = (props) => {
 
-class MyEditor extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        editorState: EditorState.createEmpty(),
-      };
-    }
-  
-    onEditorStateChange = (editorState) => {
-      this.setState({
-        editorState,
-      });
-    };
-  
-    render() {
-      const { editorState } = this.state;
-      return (
-        <Editor
-          editorState={editorState}
-          wrapperClassName="demo-wrapper"
-          editorClassName="demo-editor"
-          onEditorStateChange={this.onEditorStateChange}
-        />
-      )
-    }
-  }
-  
-  export default MyEditor
+  let childCounterValue = props.counterValue;
+  return (
+    <div>
+       <button onClick={() => props.callbackFunc(++childCounterValue)}>
+       Increment Counter
+     </button>
+    </div>
+  )
+}
+
+export default Editor
