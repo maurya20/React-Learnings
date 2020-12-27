@@ -1,13 +1,12 @@
 
 
 
-const formData = 'xyz'
+const formData = {}
 const formReducer = (state = formData, action)=>{
     switch(action.type){
         case 'SUBMIT_FORM':
-        return {
-            formData:action.payload
-        }
+        return action.payload
+        
         default:
             return state
     }
