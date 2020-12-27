@@ -14,7 +14,7 @@ function CountApp() {
   console.log(todos[0])
   return (  
     <React.Fragment>  
-      <h3>What to do?{todos[1].tick}</h3>
+      <h3>What to do?{todos[0]}</h3>
       <p>You clicked {count} times</p>  
       <button onClick={() => setCount(count + 1)}>  
         Click me  

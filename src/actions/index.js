@@ -15,3 +15,10 @@ export const logAction = ()=> {
         type:'LOG_IN'
     }  
 }
+
+export const formSubmit = (data)=>{
+    return{
+        type:'SUBMIT_FORM',
+        payload:data
+    }
+}
