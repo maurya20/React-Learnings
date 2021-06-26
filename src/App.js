@@ -1,28 +1,16 @@
-import logo from "./logo.svg";
-import "./App.css";
-
-export const greet = (name) => {
-  return "Welcome" + " " + name;
-};
-function App() {
+import React from "react";
+import Button from "./containers/Button";
+import NewsItem from "./containers/NewsItem";
+import Loading from "./containers/Loading";
+import { useSelector } from "react-redux";
+let App = () => {
+  const { dog, loading } = useSelector((state) => state);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Button />
+      <Loading loading={loading} />
+      <NewsItem dog={dog} />
     </div>
   );
-}
-
+};
 export default App;
