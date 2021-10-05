@@ -5,12 +5,25 @@ export const Country = () => {
   const [list, setList] = useState([]);
   useEffect(() => {
     axios({
+      method: "get",
+      params: {
+        title:
+          "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+      },
+      url: "https://jsonplaceholder.typicode.com/posts",
+      responseType: "json",
+    }).then((response) => {
+      console.log("newwwwwww???", response.data);
+    });
+  }, []);
+  useEffect(() => {
+    axios({
       url: "https://countries.trevorblades.com",
       method: "post",
       data: {
         query: `
         query{
-          countries{
+          continents{
            code
          name
          }
@@ -18,8 +31,8 @@ export const Country = () => {
           `,
       },
     }).then((result) => {
-      console.log("from graphql>>>>>>>>>>>>>>", result.data.data.countries);
-      setList(result.data.data.countries);
+      ///console.log("from graphql>>>>>>>>>>>>>>", result.data.data.continents);
+      setList(result.data.data.continents);
     });
   }, []);
   return (

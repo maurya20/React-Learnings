@@ -1,7 +1,7 @@
 import React from "react";
 import Loading from "./Loading";
 import styled from "styled-components";
-
+import "../App.scss";
 const Image = styled.img`
   box-shadow: 5px 10px 18px #888888;
   transition: 0.3s;
