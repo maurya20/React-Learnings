@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDog } from "./actions";
 import { Country } from "./containers/Country";
 import { ImgToPdf } from "./components/ImgToPdf";
+import Home from "./Home";
 let App = () => {
   const { dog, loading } = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ let App = () => {
   }, []);
   return (
     <div>
+      <Home />
       {/* <ImgToPdf /> */}
       <Button />
       <Dog dog={dog} loading={loading} />
